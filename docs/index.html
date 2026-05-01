@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samara · Design System</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.5; background: #fff; color: #111; }
+.layout { display: flex; min-height: 100vh; }
+nav { width: 200px; flex-shrink: 0; border-right: 1px solid #e5e5e5; padding: 20px 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; background: #fafafa; }
+nav .logo { padding: 0 16px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #999; border-bottom: 1px solid #e5e5e5; margin-bottom: 8px; }
+nav a { display: block; padding: 5px 16px; color: #555; text-decoration: none; font-size: 13px; }
+nav a:hover { background: #f0f0f0; color: #111; }
+nav a.active { background: #111; color: #fff; }
+nav .ng { padding: 12px 16px 3px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #bbb; }
+main { flex: 1; padding: 40px 56px; max-width: 800px; }
+section { scroll-margin-top: 24px; }
+h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+h2 { font-size: 16px; font-weight: 600; margin: 44px 0 14px; padding-top: 44px; border-top: 1px solid #e5e5e5; }
+h2:first-of-type { margin-top: 0; border-top: none; padding-top: 0; }
+h3 { font-size: 13px; font-weight: 600; margin: 20px 0 8px; }
+p { color: #444; margin-bottom: 10px; }
+code { font-family: 'SF Mono', monospace; font-size: 12px; background: #f2f2f2; padding: 1px 5px; border-radius: 3px; }
+.sub { color: #888; font-size: 13px; margin-bottom: 24px; }
+.flink { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: #555; text-decoration: none; border: 1px solid #ddd; border-radius: 4px; padding: 4px 10px; margin-bottom: 32px; margin-right: 8px; }
+.flink:hover { border-color: #999; color: #111; }
+table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 13px; }
+th { text-align: left; padding: 7px 10px; background: #f4f4f4; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #777; border: 1px solid #e5e5e5; }
+td { padding: 7px 10px; border: 1px solid #e5e5e5; vertical-align: middle; }
+tr:hover td { background: #fafafa; }
+.swatches { display: flex; gap: 10px; margin: 8px 0 20px; flex-wrap: wrap; }
+.swatch { border: 1px solid #e5e5e5; border-radius: 5px; overflow: hidden; width: 140px; }
+.sb { height: 44px; }
+.si { padding: 6px 8px; }
+.sn { font-size: 12px; font-weight: 600; }
+.sv { font-size: 11px; color: #888; font-family: 'SF Mono', monospace; }
+.preview { background: #121212; border-radius: 6px; padding: 20px; margin: 8px 0 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.specs { list-style: none; margin: 0 0 16px; border: 1px solid #e5e5e5; border-radius: 5px; overflow: hidden; }
+.specs li { display: flex; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
+.specs li:last-child { border-bottom: none; }
+.sk { color: #666; padding: 6px 10px; min-width: 150px; flex-shrink: 0; background: #fafafa; border-right: 1px solid #f0f0f0; }
+.sv2 { padding: 6px 10px; font-family: 'SF Mono', monospace; font-size: 12px; }
+.pill { display:inline-flex; align-items:center; gap:6px; height:44px; padding:0 16px; border-radius:44px; font-size:14px; font-weight:600; color:#fff; }
+.icon-btn { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:44px; color:#fff; font-size:18px; }
+.dot { width:8px; height:8px; border-radius:50%; background:#fff; flex-shrink:0; }
+.text-preview { background:#1e1e1e; border-radius:8px; padding:16px; color:#fff; font-size:14px; line-height:1.6; margin: 8px 0; }
+.text-preview .dim { color:rgba(255,255,255,0.5); }
+</style>
+</head>
+<body>
+<div class="layout">
+
+<nav>
+  <div class="logo">Samara DS</div>
+  <div class="ng">Tokens</div>
+  <a href="#colors">Colors</a>
+  <a href="#typography">Typography</a>
+  <div class="ng">Components</div>
+  <a href="#button">Button</a>
+  <a href="#album-art">Album Art</a>
+  <a href="#text-block">Text Block</a>
+</nav>
+
+<main>
+
+<section id="colors">
+  <h1>Samara · Design System</h1>
+  <p class="sub">Work in progress · 4 components · 2 color variables · 1 text style</p>
+  <a class="flink" href="https://www.figma.com/design/Jc0yV2d3NXcUetvriqZxU0/samara-%C2%B7-design-system" target="_blank">↗ Figma</a>
+
+  <h2>Colors</h2>
+  <div class="swatches">
+    <div class="swatch">
+      <div class="sb" style="background:#1e1e1e;"></div>
+      <div class="si"><div class="sn">gray-700</div><div class="sv">#1E1E1E</div></div>
+    </div>
+    <div class="swatch">
+      <div class="sb" style="background:#fff; border-bottom:1px solid #eee;"></div>
+      <div class="si"><div class="sn">gray-0</div><div class="sv">#FFFFFF</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="typography">
+  <h2>Typography</h2>
+  <table>
+    <tr><th>Style</th><th>Family</th><th>Weight</th><th>Size</th><th>Letter spacing</th></tr>
+    <tr><td><code>label/button</code></td><td>SF Pro</td><td>Semibold 590</td><td>16px</td><td>-3</td></tr>
+  </table>
+</section>
+
+<section id="button">
+  <h2>Button</h2>
+  <p>Component set. Variant property: <code>Property 1</code>.</p>
+
+  <h3>icon + text</h3>
+  <div class="preview">
+    <div class="pill" style="background:#252525;">
+      <div class="dot"></div> Text
+    </div>
+  </div>
+  <ul class="specs">
+    <li><span class="sk">Height</span><span class="sv2">44px</span></li>
+    <li><span class="sk">Padding</span><span class="sv2">16px horizontal</span></li>
+    <li><span class="sk">Gap</span><span class="sv2">6px</span></li>
+    <li><span class="sk">Border radius</span><span class="sv2">44px</span></li>
+    <li><span class="sk">Background</span><span class="sv2">#252525</span></li>
+    <li><span class="sk">Label</span><span class="sv2">label/button</span></li>
+    <li><span class="sk">Icon</span><span class="sv2">24×24px</span></li>
+  </ul>
+
+  <h3>icon</h3>
+  <div class="preview">
+    <div class="icon-btn" style="background:#252525;">○</div>
+  </div>
+  <ul class="specs">
+    <li><span class="sk">Size</span><span class="sv2">44×44px</span></li>
+    <li><span class="sk">Border radius</span><span class="sv2">44px</span></li>
+    <li><span class="sk">Background</span><span class="sv2">#252525</span></li>
+    <li><span class="sk">Icon</span><span class="sv2">24×24px centered</span></li>
+  </ul>
+
+  <h3>Icon variants (Property 1)</h3>
+  <table>
+    <tr><th>Value</th><th>Icon</th></tr>
+    <tr><td><code>default</code></td><td>Default</td></tr>
+    <tr><td><code>remix</code></td><td>Remix</td></tr>
+    <tr><td><code>share</code></td><td>Share</td></tr>
+  </table>
+</section>
+
+<section id="album-art">
+  <h2>Album Art</h2>
+  <p>Component set. Variant property: <code>Property 1</code>.</p>
+  <ul class="specs">
+    <li><span class="sk">Size</span><span class="sv2">345×344px</span></li>
+    <li><span class="sk">Border radius</span><span class="sv2">8px</span></li>
+  </ul>
+  <table>
+    <tr><th>Value</th><th>Description</th></tr>
+    <tr><td><code>default</code></td><td>White placeholder — <code>gray-0</code></td></tr>
+    <tr><td><code>image</code></td><td>Image fill, object-cover. Swap per instance.</td></tr>
+  </table>
+</section>
+
+<section id="text-block">
+  <h2>Text Block</h2>
+  <p>Component set. Variant property: <code>Property 1</code>. Same text style across both variants.</p>
+  <ul class="specs">
+    <li><span class="sk">Width</span><span class="sv2">333px</span></li>
+    <li><span class="sk">Padding</span><span class="sv2">16px</span></li>
+    <li><span class="sk">Border radius</span><span class="sv2">16px</span></li>
+    <li><span class="sk">Background</span><span class="sv2">gray-700 (#1E1E1E)</span></li>
+    <li><span class="sk">Text</span><span class="sv2">SF Pro Regular 400, 16px, -0.48px, gray-0</span></li>
+    <li><span class="sk">Height</span><span class="sv2">Hug contents</span></li>
+  </ul>
+
+  <h3>metadata</h3>
+  <div class="text-preview">Post-punk, post-pop, posh rock, grunge, reverb, guitar interludes, 110-120 BPM</div>
+
+  <h3>lyrics</h3>
+  <div class="text-preview">
+    <div class="dim">[Verse]</div>
+    And you can just lay your guard down on the floor<br>
+    And let your hair down some more<br>
+    <br>
+    <div class="dim">[Chorus]</div>
+    'Cause I don't care about what you said<br>
+    I'm just trying to love you
+  </div>
+</section>
+
+</main>
+</div>
+
+<script>
+const sections = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('nav a');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.remove('active'));
+      const a = document.querySelector(`nav a[href="#${e.target.id}"]`);
+      if (a) a.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(s => obs.observe(s));
+links.forEach(l => l.addEventListener('click', e => {
+  e.preventDefault();
+  document.querySelector(l.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+}));
+</script>
+</body>
+</html>
