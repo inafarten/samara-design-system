@@ -122,7 +122,7 @@ function buildColors(colors) {
     swatches.append(sw);
   });
 
-  sec.append(el('h2', null, 'Colors'), swatches);
+  sec.append(el('h2', null, 'Color Palette'), swatches);
   return sec;
 }
 
@@ -245,7 +245,7 @@ function buildNav(meta, components) {
   };
 
   addGroup('Tokens');
-  addLink('#colors', 'Colors');
+  addLink('#colors', 'Color Palette');
   addLink('#typography', 'Typography');
   addGroup('Components');
   Object.keys(components).forEach(key => {
@@ -293,15 +293,9 @@ function initScrollSpy() {
 
 /* ── bootstrap ── */
 async function init() {
-  const base = import.meta?.url
-    ? new URL('.', import.meta.url).href
-    : document.currentScript?.src
-      ? new URL('.', document.currentScript.src).href
-      : './';
-
   let tokens;
   try {
-    const res = await fetch(base + 'tokens.json');
+    const res = await fetch('./tokens.json');
     if (!res.ok) throw new Error(res.statusText);
     tokens = await res.json();
   } catch (err) {
