@@ -8,189 +8,330 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.5; background: #fff; color: #111; }
 .layout { display: flex; min-height: 100vh; }
+
+/* ── Nav ── */
 nav { width: 200px; flex-shrink: 0; border-right: 1px solid #e5e5e5; padding: 20px 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; background: #fafafa; }
 nav .logo { padding: 0 16px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #999; border-bottom: 1px solid #e5e5e5; margin-bottom: 8px; }
-nav a { display: block; padding: 5px 16px; color: #555; text-decoration: none; font-size: 13px; }
+nav a { display: block; padding: 5px 16px; color: #555; text-decoration: none; font-size: 13px; border-radius: 0; transition: background 0.1s; }
 nav a:hover { background: #f0f0f0; color: #111; }
 nav a.active { background: #111; color: #fff; }
-nav .ng { padding: 12px 16px 3px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #bbb; }
-main { flex: 1; padding: 40px 56px; max-width: 800px; }
+.nav-group { padding: 12px 16px 3px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #bbb; }
+
+/* ── Main ── */
+main { flex: 1; padding: 40px 56px; max-width: 860px; }
 section { scroll-margin-top: 24px; }
 h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
 h2 { font-size: 16px; font-weight: 600; margin: 44px 0 14px; padding-top: 44px; border-top: 1px solid #e5e5e5; }
 h2:first-of-type { margin-top: 0; border-top: none; padding-top: 0; }
 h3 { font-size: 13px; font-weight: 600; margin: 20px 0 8px; }
 p { color: #444; margin-bottom: 10px; }
-code { font-family: 'SF Mono', monospace; font-size: 12px; background: #f2f2f2; padding: 1px 5px; border-radius: 3px; }
+code { font-family: 'SF Mono', ui-monospace, monospace; font-size: 12px; background: #f2f2f2; padding: 1px 5px; border-radius: 3px; }
 .sub { color: #888; font-size: 13px; margin-bottom: 24px; }
 .flink { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: #555; text-decoration: none; border: 1px solid #ddd; border-radius: 4px; padding: 4px 10px; margin-bottom: 32px; margin-right: 8px; }
 .flink:hover { border-color: #999; color: #111; }
+
+/* ── Tables ── */
 table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 13px; }
 th { text-align: left; padding: 7px 10px; background: #f4f4f4; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #777; border: 1px solid #e5e5e5; }
 td { padding: 7px 10px; border: 1px solid #e5e5e5; vertical-align: middle; }
 tr:hover td { background: #fafafa; }
+
+/* ── Swatches ── */
 .swatches { display: flex; gap: 10px; margin: 8px 0 20px; flex-wrap: wrap; }
 .swatch { border: 1px solid #e5e5e5; border-radius: 5px; overflow: hidden; width: 140px; }
-.sb { height: 44px; }
-.si { padding: 6px 8px; }
-.sn { font-size: 12px; font-weight: 600; }
-.sv { font-size: 11px; color: #888; font-family: 'SF Mono', monospace; }
-.preview { background: #121212; border-radius: 6px; padding: 20px; margin: 8px 0 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.swatch-block { height: 44px; }
+.swatch-info { padding: 6px 8px; }
+.swatch-name { font-size: 12px; font-weight: 600; }
+.swatch-hex  { font-size: 11px; color: #888; font-family: 'SF Mono', ui-monospace, monospace; }
+
+/* ── Spec list ── */
 .specs { list-style: none; margin: 0 0 16px; border: 1px solid #e5e5e5; border-radius: 5px; overflow: hidden; }
 .specs li { display: flex; font-size: 13px; border-bottom: 1px solid #f0f0f0; }
 .specs li:last-child { border-bottom: none; }
-.sk { color: #666; padding: 6px 10px; min-width: 150px; flex-shrink: 0; background: #fafafa; border-right: 1px solid #f0f0f0; }
-.sv2 { padding: 6px 10px; font-family: 'SF Mono', monospace; font-size: 12px; }
-.pill { display:inline-flex; align-items:center; gap:6px; height:44px; padding:0 16px; border-radius:44px; font-size:14px; font-weight:600; color:#fff; }
-.icon-btn { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:44px; color:#fff; font-size:18px; }
-.dot { width:8px; height:8px; border-radius:50%; background:#fff; flex-shrink:0; }
-.text-preview { background:#1e1e1e; border-radius:8px; padding:16px; color:#fff; font-size:14px; line-height:1.6; margin: 8px 0; }
-.text-preview .dim { color:rgba(255,255,255,0.5); }
+.spec-key { color: #666; padding: 6px 10px; min-width: 150px; flex-shrink: 0; background: #fafafa; border-right: 1px solid #f0f0f0; }
+.spec-val { padding: 6px 10px; font-family: 'SF Mono', ui-monospace, monospace; font-size: 12px; }
+
+/* ── Component previews ── */
+.preview { background: #121212; border-radius: 6px; padding: 20px; margin: 8px 0; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pill { display: inline-flex; align-items: center; gap: 6px; height: 44px; padding: 0 16px; border-radius: 44px; font-size: 14px; font-weight: 600; color: #fff; letter-spacing: -0.03em; }
+.icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 44px; color: #fff; font-size: 18px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; flex-shrink: 0; }
+.album-art-default { width: 120px; height: 120px; border-radius: 8px; background: #fff; }
+.album-art-image   { width: 120px; height: 120px; border-radius: 8px; background: linear-gradient(135deg, #4a4a6a, #6a3a5a); }
+.text-preview { background: #1e1e1e; border-radius: 8px; padding: 16px; color: #fff; font-size: 14px; line-height: 1.6; margin: 8px 0; max-width: 360px; }
+.text-preview .marker { color: rgba(255,255,255,0.45); }
 </style>
 </head>
 <body>
 <div class="layout">
-
-<nav>
-  <div class="logo">Samara DS</div>
-  <div class="ng">Tokens</div>
-  <a href="#colors">Colors</a>
-  <a href="#typography">Typography</a>
-  <div class="ng">Components</div>
-  <a href="#button">Button</a>
-  <a href="#album-art">Album Art</a>
-  <a href="#text-block">Text Block</a>
-</nav>
-
-<main>
-
-<section id="colors">
-  <h1>Samara · Design System</h1>
-  <p class="sub">Work in progress · 4 components · 2 color variables · 1 text style</p>
-  <a class="flink" href="https://www.figma.com/design/Jc0yV2d3NXcUetvriqZxU0/samara-%C2%B7-design-system" target="_blank">↗ Figma</a>
-
-  <h2>Colors</h2>
-  <div class="swatches">
-    <div class="swatch">
-      <div class="sb" style="background:#1e1e1e;"></div>
-      <div class="si"><div class="sn">gray-700</div><div class="sv">#1E1E1E</div></div>
-    </div>
-    <div class="swatch">
-      <div class="sb" style="background:#fff; border-bottom:1px solid #eee;"></div>
-      <div class="si"><div class="sn">gray-0</div><div class="sv">#FFFFFF</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="typography">
-  <h2>Typography</h2>
-  <table>
-    <tr><th>Style</th><th>Family</th><th>Weight</th><th>Size</th><th>Letter spacing</th></tr>
-    <tr><td><code>label/button</code></td><td>SF Pro</td><td>Semibold 590</td><td>16px</td><td>-3</td></tr>
-  </table>
-</section>
-
-<section id="button">
-  <h2>Button</h2>
-  <p>Component set. Variant property: <code>Property 1</code>.</p>
-
-  <h3>icon + text</h3>
-  <div class="preview">
-    <div class="pill" style="background:#252525;">
-      <div class="dot"></div> Text
-    </div>
-  </div>
-  <ul class="specs">
-    <li><span class="sk">Height</span><span class="sv2">44px</span></li>
-    <li><span class="sk">Padding</span><span class="sv2">16px horizontal</span></li>
-    <li><span class="sk">Gap</span><span class="sv2">6px</span></li>
-    <li><span class="sk">Border radius</span><span class="sv2">44px</span></li>
-    <li><span class="sk">Background</span><span class="sv2">#252525</span></li>
-    <li><span class="sk">Label</span><span class="sv2">label/button</span></li>
-    <li><span class="sk">Icon</span><span class="sv2">24×24px</span></li>
-  </ul>
-
-  <h3>icon</h3>
-  <div class="preview">
-    <div class="icon-btn" style="background:#252525;">○</div>
-  </div>
-  <ul class="specs">
-    <li><span class="sk">Size</span><span class="sv2">44×44px</span></li>
-    <li><span class="sk">Border radius</span><span class="sv2">44px</span></li>
-    <li><span class="sk">Background</span><span class="sv2">#252525</span></li>
-    <li><span class="sk">Icon</span><span class="sv2">24×24px centered</span></li>
-  </ul>
-
-  <h3>Icon variants (Property 1)</h3>
-  <table>
-    <tr><th>Value</th><th>Icon</th></tr>
-    <tr><td><code>default</code></td><td>Default</td></tr>
-    <tr><td><code>remix</code></td><td>Remix</td></tr>
-    <tr><td><code>share</code></td><td>Share</td></tr>
-  </table>
-</section>
-
-<section id="album-art">
-  <h2>Album Art</h2>
-  <p>Component set. Variant property: <code>Property 1</code>.</p>
-  <ul class="specs">
-    <li><span class="sk">Size</span><span class="sv2">345×344px</span></li>
-    <li><span class="sk">Border radius</span><span class="sv2">8px</span></li>
-  </ul>
-  <table>
-    <tr><th>Value</th><th>Description</th></tr>
-    <tr><td><code>default</code></td><td>White placeholder — <code>gray-0</code></td></tr>
-    <tr><td><code>image</code></td><td>Image fill, object-cover. Swap per instance.</td></tr>
-  </table>
-</section>
-
-<section id="text-block">
-  <h2>Text Block</h2>
-  <p>Component set. Variant property: <code>Property 1</code>. Same text style across both variants.</p>
-  <ul class="specs">
-    <li><span class="sk">Width</span><span class="sv2">333px</span></li>
-    <li><span class="sk">Padding</span><span class="sv2">16px</span></li>
-    <li><span class="sk">Border radius</span><span class="sv2">16px</span></li>
-    <li><span class="sk">Background</span><span class="sv2">gray-700 (#1E1E1E)</span></li>
-    <li><span class="sk">Text</span><span class="sv2">SF Pro Regular 400, 16px, -0.48px, gray-0</span></li>
-    <li><span class="sk">Height</span><span class="sv2">Hug contents</span></li>
-  </ul>
-
-  <h3>metadata</h3>
-  <div class="text-preview">Post-punk, post-pop, posh rock, grunge, reverb, guitar interludes, 110-120 BPM</div>
-
-  <h3>lyrics</h3>
-  <div class="text-preview">
-    <div class="dim">[Verse]</div>
-    And you can just lay your guard down on the floor<br>
-    And let your hair down some more<br>
-    <br>
-    <div class="dim">[Chorus]</div>
-    'Cause I don't care about what you said<br>
-    I'm just trying to love you
-  </div>
-</section>
-
-</main>
+  <nav id="nav">
+    <div class="logo">Samara DS</div>
+  </nav>
+  <main id="main">
+    <p style="color:#999;font-size:13px;padding:40px 0;">Loading…</p>
+  </main>
 </div>
 
 <script>
-const sections = document.querySelectorAll('section[id]');
-const links = document.querySelectorAll('nav a');
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      links.forEach(l => l.classList.remove('active'));
-      const a = document.querySelector(`nav a[href="#${e.target.id}"]`);
-      if (a) a.classList.add('active');
-    }
+/* ── helpers ── */
+const el = (tag, cls, html) => {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (html !== undefined) e.innerHTML = html;
+  return e;
+};
+
+const specList = specs => {
+  const ul = el('ul', 'specs');
+  Object.entries(specs).forEach(([k, v]) => {
+    const li = el('li');
+    li.append(el('span', 'spec-key', k), el('span', 'spec-val', v));
+    ul.append(li);
   });
-}, { threshold: 0.3 });
-sections.forEach(s => obs.observe(s));
-links.forEach(l => l.addEventListener('click', e => {
-  e.preventDefault();
-  document.querySelector(l.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-}));
+  return ul;
+};
+
+const table = (headers, rows) => {
+  const t = el('table');
+  const head = el('tr');
+  headers.forEach(h => head.append(el('th', null, h)));
+  t.append(el('thead').appendChild(head).closest('thead') || (() => { const th = el('thead'); th.append(head); return th; })());
+  rows.forEach(row => {
+    const tr = el('tr');
+    row.forEach(cell => tr.append(el('td', null, cell)));
+    t.append(tr);
+  });
+  return t;
+};
+
+/* ── section builders ── */
+function buildColors(colors) {
+  const sec = el('section');
+  sec.id = 'colors';
+
+  const swatches = el('div', 'swatches');
+  colors.forEach(c => {
+    const isWhite = c.value.toUpperCase() === '#FFFFFF';
+    const sw = el('div', 'swatch');
+    const block = el('div', 'swatch-block');
+    block.style.background = c.value;
+    if (isWhite) block.style.borderBottom = '1px solid #eee';
+    const info = el('div', 'swatch-info');
+    info.append(el('div', 'swatch-name', c.name), el('div', 'swatch-hex', c.value));
+    sw.append(block, info);
+    swatches.append(sw);
+  });
+
+  sec.append(el('h2', null, 'Colors'), swatches);
+  return sec;
+}
+
+function buildTypography(typography) {
+  const sec = el('section');
+  sec.id = 'typography';
+  const t = table(
+    ['Style', 'Family', 'Weight', 'Size', 'Letter spacing', 'Usage'],
+    typography.map(s => [
+      `<code>${s.style}</code>`, s.family, s.weight, s.size, s.letterSpacing, s.usage || '—'
+    ])
+  );
+  sec.append(el('h2', null, 'Typography'), t);
+  return sec;
+}
+
+function buildButton(comp) {
+  const sec = el('section');
+  sec.id = 'button';
+  sec.append(
+    el('h2', null, 'Button'),
+    el('p', null, comp.description)
+  );
+
+  // icon + text variant
+  const v0 = comp.variants[0];
+  const preview0 = el('div', 'preview');
+  const pill = el('div', 'pill');
+  pill.style.background = '#252525';
+  pill.append(el('span', 'dot'), document.createTextNode(' Label'));
+  preview0.append(pill);
+
+  // icon variant
+  const v1 = comp.variants[1];
+  const preview1 = el('div', 'preview');
+  const iconBtn = el('div', 'icon-btn');
+  iconBtn.style.background = '#252525';
+  iconBtn.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/></svg>`;
+  preview1.append(iconBtn);
+
+  sec.append(
+    el('h3', null, v0.name), preview0, specList(v0.specs),
+    el('h3', null, v1.name), preview1, specList(v1.specs)
+  );
+
+  if (comp.iconVariants) {
+    sec.append(
+      el('h3', null, 'Icon variants (Property 1)'),
+      table(['Value', 'Icon'], comp.iconVariants.map(v => [`<code>${v.value}</code>`, v.label]))
+    );
+  }
+
+  return sec;
+}
+
+function buildAlbumArt(comp) {
+  const sec = el('section');
+  sec.id = 'album-art';
+
+  const preview = el('div', 'preview');
+  preview.append(el('div', 'album-art-default'), el('div', 'album-art-image'));
+
+  sec.append(
+    el('h2', null, 'Album Art'),
+    el('p', null, comp.description),
+    preview,
+    specList(comp.specs),
+    table(
+      ['Value', 'Description'],
+      comp.variants.map(v => [`<code>${v.value}</code>`, v.description])
+    )
+  );
+  return sec;
+}
+
+function buildTextBlock(comp) {
+  const sec = el('section');
+  sec.id = 'text-block';
+  sec.append(
+    el('h2', null, 'Text Block'),
+    el('p', null, comp.description),
+    specList(comp.specs)
+  );
+
+  comp.variants.forEach(v => {
+    sec.append(el('h3', null, v.name));
+    const tp = el('div', 'text-preview');
+
+    if (v.example) {
+      tp.textContent = v.example;
+    } else if (v.exampleLines) {
+      v.exampleLines.forEach((line, i) => {
+        if (line.type === 'blank') {
+          tp.append(el('br'));
+        } else if (line.type === 'marker') {
+          const span = el('span', 'marker', line.text);
+          tp.append(span, el('br'));
+        } else {
+          tp.append(document.createTextNode(line.text), el('br'));
+        }
+      });
+    }
+
+    sec.append(tp);
+  });
+
+  return sec;
+}
+
+/* ── nav builder ── */
+function buildNav(meta, components) {
+  const nav = document.getElementById('nav');
+  nav.innerHTML = `<div class="logo">Samara DS</div>`;
+
+  const addGroup = label => nav.append(el('div', 'nav-group', label));
+  const addLink  = (href, label) => {
+    const a = el('a', null, label);
+    a.href = href;
+    nav.append(a);
+  };
+
+  addGroup('Tokens');
+  addLink('#colors', 'Colors');
+  addLink('#typography', 'Typography');
+  addGroup('Components');
+  Object.keys(components).forEach(key => {
+    addLink(`#${key}`, key.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()));
+  });
+}
+
+/* ── header builder ── */
+function buildHeader(meta, colors, typography, components) {
+  const nComponents = Object.keys(components).length;
+  const nColors = colors.length;
+  const nStyles = typography.length;
+  const frag = document.createDocumentFragment();
+
+  const h1 = el('h1', null, meta.title);
+  const sub = el('p', 'sub',
+    `Work in progress · ${nComponents} components · ${nColors} color variable${nColors !== 1 ? 's' : ''} · ${nStyles} text style${nStyles !== 1 ? 's' : ''}`);
+  const flink = el('a', 'flink', '↗ Figma');
+  flink.href = meta.figma;
+  flink.target = '_blank';
+
+  frag.append(h1, sub, flink);
+  return frag;
+}
+
+/* ── scroll spy ── */
+function initScrollSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const links    = document.querySelectorAll('nav a');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const a = document.querySelector(`nav a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3 });
+  sections.forEach(s => obs.observe(s));
+  links.forEach(l => l.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(l.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+  }));
+}
+
+/* ── bootstrap ── */
+async function init() {
+  const base = import.meta?.url
+    ? new URL('.', import.meta.url).href
+    : document.currentScript?.src
+      ? new URL('.', document.currentScript.src).href
+      : './';
+
+  let tokens;
+  try {
+    const res = await fetch(base + 'tokens.json');
+    if (!res.ok) throw new Error(res.statusText);
+    tokens = await res.json();
+  } catch (err) {
+    document.getElementById('main').innerHTML =
+      `<p style="color:#c00;padding:40px 0;">Failed to load tokens.json: ${err.message}</p>`;
+    return;
+  }
+
+  const { meta, colors, typography, components } = tokens;
+
+  buildNav(meta, components);
+
+  const main = document.getElementById('main');
+  main.innerHTML = '';
+
+  // header appended to the colors section
+  const colorsSec = buildColors(colors);
+  colorsSec.prepend(buildHeader(meta, colors, typography, components));
+  main.append(colorsSec);
+
+  main.append(buildTypography(typography));
+
+  if (components.button)      main.append(buildButton(components.button));
+  if (components['album-art']) main.append(buildAlbumArt(components['album-art']));
+  if (components['text-block']) main.append(buildTextBlock(components['text-block']));
+
+  initScrollSpy();
+}
+
+init();
 </script>
 </body>
 </html>
